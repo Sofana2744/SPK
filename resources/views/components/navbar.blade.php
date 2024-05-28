@@ -10,7 +10,7 @@
                     </svg>
                 </div>
                 <ul tabindex="0"
-                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box mr- w-52">
                     <li><a href="/kriteria">Kriteria</a></li>
                     <li><a href="/alternatif">Alternatif</a></li>
                     <li><a href="/hasil">Hasil</a></li>
@@ -20,9 +20,9 @@
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
-                <li class="mr-5"><a href="/kriteria">Kriteria</a></li>
-                <li class="mr-5"><a href="/alternatif">Alternatif</a></li>
-                <li class="mr-5"><a href="/hasil">Hasil</a></li>
+                <li><a href="/kriteria">Kriteria</a></li>
+                <li><a href="/alternatif">Alternatif</a></li>
+                <li><a href="/hasil">Hasil</a></li>
             </ul>
         </div>
         <div class="navbar-end">
