@@ -115,6 +115,7 @@
                                     placeholder="Type criteria name" required>
                             </div>
                             {{-- <div class="col-span-2 sm:col-span-1">
+
                             <label for="price"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
                             <input type="number" name="price" id="price"
@@ -197,4 +198,5 @@
             </div>
         </dialog>
     @endforeach
+
 </x-layout>

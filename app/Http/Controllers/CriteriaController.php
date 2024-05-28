@@ -14,7 +14,6 @@ class CriteriaController extends Controller
             "title" => "Criteria"
         ]);
     }
-
     public function store(Request $request)
     {
         Criteria::create([
@@ -38,6 +37,8 @@ class CriteriaController extends Controller
         $criteria->update([
             'name' => $request->criteria, 
         ]);
+
         return redirect()->back()->with(['update' => 'Data criteria berhasil diupdate']);
+
     }
 }
