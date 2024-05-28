@@ -14,11 +14,22 @@ class CriteriaController extends Controller
             "title" => "Criteria"
         ]);
     }
-
-    public function store(Request $request){    
+    public function store(Request $request)
+    {
         Criteria::create([
             'name' => $request->criteria,
         ]);
-        return redirect()->back()->with(['success' => 'Data Bahan Baku Telah Ditambahkan']);
+
+        return back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        $criteria = Criteria::find($id);
+        $criteria->update([
+            'name' => $request->criteria, 
+        ]);
+        return back();
+
     }
 }
