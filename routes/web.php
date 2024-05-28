@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//hallo
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
 });
