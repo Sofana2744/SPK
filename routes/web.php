@@ -13,7 +13,6 @@ Route::get('/kriteria', function () {
 Route::get('/alternatif', function () {
     return view('alternatif' , ['title' => 'Alternatif']);
 });
-
 Route::get('/hasil', function () {
-    return view('hasil' , ['title' => 'Hasil']);
+    return view('hasil' , ['title' => 'hasil']);
 });
