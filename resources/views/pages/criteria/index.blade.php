@@ -52,4 +52,5 @@
     @include('pages.criteria.update')
     @include('pages.criteria.delete')
 
+
 </x-layout>
