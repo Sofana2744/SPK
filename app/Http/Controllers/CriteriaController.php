@@ -23,6 +23,13 @@ class CriteriaController extends Controller
         return back();
     }
 
+    public function destroy($id)
+    {
+        Criteria::find($id)->delete();
+
+        return back();
+    }
+
     public function update(Request $request, $id)
     {
         $criteria = Criteria::find($id);
