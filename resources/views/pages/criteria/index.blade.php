@@ -3,7 +3,6 @@
     <!-- Open the modal using ID.showModal() method -->
 
     @include('components.flash-messages')
-    {{--  --}}
 
     <button class="btn btn-success btn-sm rounded btn-outline" onclick="my_modal_create.showModal()">Create new
         criteria</button>
