@@ -14,7 +14,6 @@ class CriteriaController extends Controller
             "title" => "Criteria"
         ]);
     }
-
     public function store(Request $request)
     {
         Criteria::create([
@@ -31,5 +30,6 @@ class CriteriaController extends Controller
             'name' => $request->criteria, 
         ]);
         return back();
+
     }
 }

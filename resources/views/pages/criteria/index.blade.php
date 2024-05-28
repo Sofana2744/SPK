@@ -94,7 +94,9 @@
 
     @foreach ($data as $row )
 
-      <dialog id="edit_{{ $row->id }}" class="modal">
+
+      <dialog id="edit_1" class="modal">
+
         <div class="modal-box bg-white rounded-lg shadow dark:bg-gray-700">
             <div class="relative p-4 w-full max-w-md max-h-full">
                 <!-- Modal content -->
@@ -164,4 +166,5 @@
     </dialog>
             
     @endforeach
+
 </x-layout>
