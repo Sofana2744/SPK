@@ -20,14 +20,15 @@ class CriteriaController extends Controller
             'name' => $request->criteria,
         ]);
 
-        return back();
+        return redirect()->back()->with(['success' => 'data criteria berhasil ditambahkan']);
     }
 
     public function destroy($id)
     {
         Criteria::find($id)->delete();
 
-        return back();
+        return back()->with(['delete' => 'Data criteria berhasil hapus']);
+
     }
 
     public function update(Request $request, $id)
@@ -36,7 +37,8 @@ class CriteriaController extends Controller
         $criteria->update([
             'name' => $request->criteria, 
         ]);
-        return back();
+
+        return redirect()->back()->with(['update' => 'Data criteria berhasil diupdate']);
 
     }
 }
