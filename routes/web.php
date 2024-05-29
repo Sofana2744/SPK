@@ -14,6 +14,9 @@ Route::post('/alternative', [AlternativeController::class,'store'] );
 Route::patch('/alternative/{id}', [AlternativeController::class, 'update'] );
 Route::delete('/alternative/{id}', [AlternativeController::class, 'destroy'] );
 
+Route::get('matrix', [CriteriaController::class,'matrix'] );
+Route::post('/matrix/proses', [CriteriaController::class,'prosesMatrix'] );
+
 
 
 
