@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlternativeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CriteriaController;
 
@@ -8,11 +9,13 @@ Route::post('/criteria', [CriteriaController::class,'store'] );
 Route::patch('/criteria/{id}', [CriteriaController::class, 'update'] );
 Route::delete('/criteria/{id}', [CriteriaController::class, 'destroy'] );
 
-use App\Http\Controllers\CriteriaController;
-//hallo
+Route::get('/alternative', [AlternativeController::class,'index'] );
+Route::post('/alternative', [AlternativeController::class,'store'] );
+Route::patch('/alternative/{id}', [AlternativeController::class, 'update'] );
+Route::delete('/alternative/{id}', [AlternativeController::class, 'destroy'] );
 
-Route::get("/criteria", [CriteriaController::class,'index']);
-Route::post("/criteria", [CriteriaController::class,'store']);
+
+
 
 
 Route::get('/', function () {
@@ -26,7 +29,6 @@ Route::get('/kriteria', function () {
 Route::get('/alternatif', function () {
     return view('alternatif' , ['title' => 'Alternatif']);
 });
-
 Route::get('/hasil', function () {
-    return view('hasil' , ['title' => 'Hasil']);
+    return view('hasil' , ['title' => 'hasil']);
 });
