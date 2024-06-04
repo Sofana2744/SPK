@@ -88,18 +88,22 @@ class AlternativeController extends Controller
 
         foreach (Criteria::all() as $key => $row)
         {
-            $min = SubAlternative::where('criteria_id', $row->id)->min('value');
+            $min = SubAlternative::where('criteria_id', $row->id)->get('value')->min('value');
             array_push($dataMin, $min);
-            $max = SubAlternative::where('criteria_id', $row->id)->max('value');
+            $max = SubAlternative::where('criteria_id', $row->id)->get('value')->max('value');
             array_push($dataMax, $max);
         }
 
+        // return dd($dataMin, $dataMax);
         NormalisasiAlternative::truncate();
 
-        foreach(Alternative::all() as $key => $row)
+        foreach(Alternative::all() as  $row)
         {
             $index = 0;
-            foreach($row->subAlternative as $key => $item){
+            foreach($row->subAlternative as  $item){
+                $sub = $item->value;
+                $Min = $dataMin[$index];
+                $Max = $dataMax[$index];
                 if($dataMax[$index] - $dataMin[$index] == 0)
                 {
                     NormalisasiAlternative::create([
@@ -109,7 +113,7 @@ class AlternativeController extends Controller
                 }else{
                     NormalisasiAlternative::create([
                         'sub_alternative_id' => $item->id,
-                        'value' => (($item->value - $dataMin[$index]) / ($dataMax[$index] - $dataMin[$index])),
+                        'value' => (($sub - $Min) / ($Max - $Min)),
                     ]);
                 }
                     $index++;

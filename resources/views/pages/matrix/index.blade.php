@@ -24,19 +24,19 @@
             @endphp
                 @if ($row->name == $item->name)
                     <div class="join m-2 hidden">
-                        <button class="btn join-item rounded-l-full w-32">{{ $row->name }}</button>
+                        <button type="button" class="btn join-item rounded-l-full w-32">{{ $row->name }}</button>
                         <input class="input input-bordered join-item w-24" value="1" name="{{ str_replace(' ', '',$row->name.'_'.$item->name) }}"/>
-                        <button class="btn join-item rounded-r-full w-32">{{ $item->name }}</button>
+                        <button type="button" class="btn join-item rounded-r-full w-32">{{ $item->name }}</button>
                     </div>
                     @php
                     @endphp
                 @else
 
                     <div class="join m-2">
-                        <button class="btn join-item rounded-l-full w-32">{{ $row->name }}</button>
+                        <button type="button" class="btn join-item rounded-l-full w-32">{{ $row->name }}</button>
                         <input class="input input-bordered join-item w-24"  name="{{ str_replace(' ', '',$row->name.'_'.$item->name) }}" />
                         <input class="input input-bordered join-item w-24" name="{{ str_replace(' ', '',$item->name.'_'.$row->name) }}"/>
-                        <button class="btn join-item rounded-r-full w-32">{{ $item->name }}</button>
+                        <button type="button" class="btn join-item rounded-r-full w-32">{{ $item->name }}</button>
                     </div>
                 @endif
             @endforeach

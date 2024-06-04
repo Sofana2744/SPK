@@ -167,7 +167,7 @@
                     <tr>
                         <th>{{ $row->name }}</th>
                         @foreach ($row->subAlternative as $item)
-                            <th>{{ number_format($item->NormalisasiAlternative->value * $priorities[$index], 2, '.', '') }}</th>
+                            <th class="h-12">{{ number_format($priorities[$index] * $item->NormalisasiAlternative->value , 2, '.', '') }} - A: {{ $priorities[$index] }} - p: {{ $item->NormalisasiAlternative->value }}</th>
                             @php
                                 array_push($total, $item->NormalisasiAlternative->value * $priorities[$index]);
                                 $index++;
