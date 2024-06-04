@@ -46,6 +46,7 @@
             </tbody>
         </table>
     </div>
+    
 
     {{-- modal create --}}
     @include('pages.criteria.create')

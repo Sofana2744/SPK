@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Criteria;
+use App\Models\Alternative;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -47,9 +48,10 @@ class CriteriaController extends Controller
     public function matrix(Request $request)
     {
         $criteria = Criteria::all();
+        
         return view('pages.matrix.index', [
             'criteria' => $criteria,
-            'title' => 'Matrix Kriteria'
+            'title' => 'Matrix Kriteria',
         ]);
     }
 
@@ -57,16 +59,31 @@ class CriteriaController extends Controller
     {
     $criteria = Criteria::all();
     $data = array();
+    $i = 0;
         foreach ($criteria as $row) {
+            $t=0;
             foreach($criteria as $item) {
                 $push = str_replace(' ','', $row->name.'_'.$item->name);
-                array_push($data, $request->$push);
+                if ($request->$push == null){
+                    $data[$i][$t] = 1;
+                    $t++;
+                }
+                else{
+                                    $data[$i][$t] = (float)$request->$push;
+                $t++;
+                }
+
             }
+            $i++;
         }
+      
+        $alternative = Alternative::all();
+
         return view('pages.matrix.matrix', [
             'title' => 'Proses Matrix',
             'data'=> $data,
-            'criteria' => $criteria
+            'alternative' => $alternative,
+            'criteria' => $criteria,
         ]);
     }
 }

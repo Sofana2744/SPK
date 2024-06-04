@@ -42,7 +42,7 @@
             @endforeach
         @endforeach
     </div>
-<button type="submit">dawdawd</button>
+<button class="btn btn-primary mt-5" type="submit">Proses Matrix</button>
 </form>
     
 
